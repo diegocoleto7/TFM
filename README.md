@@ -1,2 +1,2 @@
 # TFM
-This repository contain scrpts, parameters and workflows of my master thesis.
+This repository contains scripts, parameters, and workflows from my master's thesis.
