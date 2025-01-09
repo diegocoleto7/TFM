@@ -15,11 +15,11 @@ module load kraken2/2.1.3
 threads=$SLURM_NTASKS
 
 # Directories
-input_dir="/home/proyectos/imdeaalim/compubio/diego/data/nobac"
-output_dir="/home/proyectos/imdeaalim/compubio/diego/out/nobac"
+input_dir="/path/to/data/nobac"
+output_dir="/path/to/out/nobac"
 kraken_output_dir="${output_dir}/kraken_outputs_confidence"
 kraken_report_dir="${output_dir}/kraken_reports_confidence"
-fungidb="/home/proyectos/imdeaalim/compubio/diego/fungi_db"
+fungidb="/path/to/fungi_db"
 # Create directories
 mkdir -p $output_dir
 mkdir -p $kraken_output_dir
