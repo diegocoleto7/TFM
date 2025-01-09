@@ -45,3 +45,13 @@
      - `AI4food-WGS.R`: Post-analysis script for the AI4food dataset.
      - `ECNR-WGS.R`: Post-analysis script for the ECNR dataset.
    - **Purpose:** Perform statistical analyses and generate visualizations for both WGS datasets.
+
+
+
+
+   **Note:** The Kraken2 database for taxonomic analysis can be created using the scripts provided in the `Database-Setup` directory or by using the pre-built Kraken2 database with the following commands:
+
+   ```bash
+   kraken2-build --download-library fungi --db /path/to/fungi_db --use-ftp
+   kraken2-build --download-taxonomy --db /path/to/fungi_db
+   kraken2-build --build --db /path/to/fungi_db
