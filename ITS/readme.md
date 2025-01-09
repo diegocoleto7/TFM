@@ -1,5 +1,7 @@
 # Workflow Details
 
+**Note:** Steps 1 have been executed using SLURM.
+
 1. **Main Analysis Script**
    
    - **Script:** `Qiime2.sh`
