@@ -35,7 +35,7 @@
    
    - **Command:**
      ```bash
-     kraken-biom "{input_report_dir}" -o "{output_file}" --fmt json
+     kraken-biom "/path/to/input_report_dir" -o "/path/to/output_file" --fmt json
      ```
    - **Purpose:** Converts Kraken2 reports into `.biom` format for downstream analysis.
 
@@ -49,7 +49,7 @@
 
 
 
-   **Note:** The Kraken2 database for taxonomic analysis can be created using the scripts provided in the `Database-Setup` directory or by using the pre-built Kraken2 database with the following commands:
+ **Note:** The Kraken2 database for taxonomic analysis can be created using the scripts provided in the `Database-Setup` directory or by using the pre-built Kraken2 database with the following commands:
 
    ```bash
    kraken2-build --download-library fungi --db /path/to/fungi_db --use-ftp
