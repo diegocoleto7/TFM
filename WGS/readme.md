@@ -1,5 +1,7 @@
 # Workflow Details
 
+**Note:** Steps 1, 2, and 3 have been executed using SLURM.
+
 1. **Host DNA Filtering**
    
    - **Script:** `host-filter.sh`
