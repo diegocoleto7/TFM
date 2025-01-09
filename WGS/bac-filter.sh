@@ -15,9 +15,9 @@ export TMPDIR=/scratch/compubio
 module load bowtie2/2.5.4
 
 # Directories
-input_dir="/home/proyectos/imdeaalim/compubio/diego/data/filtered_data"
-output_dir="/home/proyectos/imdeaalim/compubio/diego/data/nobac"
-bacteria_db="/home/proyectos/imdeaalim/compubio/diego/bacteria_db"
+input_dir="/path/to/data/filtered_data"
+output_dir="/path/to/data/nobac"
+bacteria_db="/path/to/bacteria_db"
 
 # Create output dir
 mkdir -p "${output_dir}"
