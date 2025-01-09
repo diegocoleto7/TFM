@@ -13,9 +13,9 @@
 module load bowtie2/2.5.4
 
 # Directories
-input_dir="/home/proyectos/imdeaalim/compubio/diego/data/WGS"  
-output_dir="/home/proyectos/imdeaalim/compubio/diego/data/filtered_data"  
-genome_dir="home/proyectos/imdeaalim/compubio/genome"
+input_dir="/path/to/data/WGS"  
+output_dir="/path/to/data/filtered_data"  
+genome_dir="/path/to/genome"
 mkdir -p ${output_dir}
 
 # Filter FASTQ´s
