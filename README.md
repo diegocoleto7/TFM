@@ -23,8 +23,3 @@ Contains the scripts used to describe metrics and generate graphs that assist in
 ## Prerequisites
 
 Ensure that you have the necessary software and dependencies installed for each analysis pipeline.
-
-
-## Contact
-
-For any questions or issues, please contact [your.email@example.com](mailto:your.email@example.com).
