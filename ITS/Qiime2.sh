@@ -17,51 +17,51 @@ module load qiime/amplicon-2024.5
 export TMPDIR=/scratch/$USER/$SLURM_JOB_ID
 
 # Output dir
-output_dir="/home/proyectos/imdeaalim/compubio/qiime2"
+output_dir="/path/to/qiime2"
 
 # Import merged data
 qiime tools import \
   --type 'SampleData[SequencesWithQuality]' \
-  --input-path /home/proyectos/imdeaalim/compubio/qiime2/data/manifest1.tsv \
-  --output-path ${output_dir}/nochimera//merged-demux.qza \
+  --input-path /path/to/manifest.tsv \
+  --output-path ${output_dir}/merged-demux.qza \
   --input-format SingleEndFastqManifestPhred33V2
 
 # Visualization of demux
 qiime demux summarize \
-  --i-data ${output_dir}/nochimera/merged-demux.qza \
-  --o-visualization ${output_dir}/nochimera/demux.qzv
+  --i-data ${output_dir}/merged-demux.qza \
+  --o-visualization ${output_dir}/demux.qzv
 
 # Dereplication of  sequences
 qiime vsearch dereplicate-sequences \
-  --i-sequences ${output_dir}/nochimera/merged-demux.qza \
-  --o-dereplicated-table ${output_dir}/nochimera/table.qza \
-  --o-dereplicated-sequences ${output_dir}/nochimera/rep-seqs.qza
+  --i-sequences ${output_dir}/merged-demux.qza \
+  --o-dereplicated-table ${output_dir}/table.qza \
+  --o-dereplicated-sequences ${output_dir}/rep-seqs.qza
   --threads 50
 # Clasification  UNITE trained
 
 qiime feature-classifier classify-sklearn \
-  --i-classifier /usr/local/qiime/qiime2-amplicon-2024.5/unite/unite_ver10_99_04.04.2024-Q2-2024.5.qza \
-  --i-reads ${output_dir}/nochimera/rep-seqs.qza \
-  --o-classification ${output_dir}/nochimera/taxonomy.qza
+  --i-classifier /path/to/unite_ver10_99_04.04.2024-Q2-2024.5.qza \
+  --i-reads ${output_dir}/rep-seqs.qza \
+  --o-classification ${output_dir}/taxonomy.qza
   --p-n-jobs 50
 
 # Export feature table
 qiime tools export \
-  --input-path ${output_dir}/nochimera/table.qza \
-  --output-path ${output_dir}/nochimera/exported-feature-table
+  --input-path ${output_dir}/table.qza \
+  --output-path ${output_dir}/exported-feature-table
 
 # Convert feature table to biom format
 biom convert \
-  -i ${output_dir}/nochimera/exported-feature-table/feature-table.biom \
-  -o ${output_dir}/nochimera/exported-feature-table/feature-table.tsv \
+  -i ${output_dir}/exported-feature-table/feature-table.biom \
+  -o ${output_dir}/exported-feature-table/feature-table.tsv \
   --to-tsv
   
 # Export representative sequences
 qiime tools export \
-  --input-path ${output_dir}/nochimera/rep-seqs.qza \
-  --output-path ${output_dir}/nochimera/exported-rep-seqs
+  --input-path ${output_dir}/rep-seqs.qza \
+  --output-path ${output_dir}/exported-rep-seqs
 
 # Export taxonomy
 qiime tools export \
-  --input-path ${output_dir}/nochimera/taxonomy.qza \
-  --output-path ${output_dir}/nochimera/exported-taxonomy
+  --input-path ${output_dir}/taxonomy.qza \
+  --output-path ${output_dir}/exported-taxonomy
