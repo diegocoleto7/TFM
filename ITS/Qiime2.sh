@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -p bioinfo                      #partition/queue name
-#SBATCH --job-name=qiime2024.5-celiac                #Job name
+#SBATCH --job-name=qiime2024.5              #Job name
 #SBATCH -N 1                   #Un nodo
 #SBATCH -n 50                   #Cores
 #SBATCH -t 100:00:00             #Time limit hrs:min:sec
@@ -17,12 +17,12 @@ module load qiime/amplicon-2024.5
 export TMPDIR=/scratch/$USER/$SLURM_JOB_ID
 
 # Output dir
-output_dir="/home/proyectos/imdeaalim/compubio/qiime2-AI"
+output_dir="/home/proyectos/imdeaalim/compubio/qiime2"
 
 # Import merged data
 qiime tools import \
   --type 'SampleData[SequencesWithQuality]' \
-  --input-path /home/proyectos/imdeaalim/compubio/qiime2-AI/data/manifest1.tsv \
+  --input-path /home/proyectos/imdeaalim/compubio/qiime2/data/manifest1.tsv \
   --output-path ${output_dir}/nochimera//merged-demux.qza \
   --input-format SingleEndFastqManifestPhred33V2
 
